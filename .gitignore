@@ -53,3 +53,18 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# --- JetBrains / CLion Specific ---
+# This folder contains your personal IDE settings (themes, window positions, etc.)
+.idea/
+
+# These folders are where CLion stores the compiled code and CMake metadata
+cmake-build-debug/
+cmake-build-release/
+cmake-build-*/
+
+# --- OS Specific ---
+# For your French Mac system (and Windows)
+.DS_Store
+Thumbs.db
+desktop.ini
