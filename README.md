@@ -1,4 +1,4 @@
-# Estructura del Proyecto: Práctica 1 - Cálculo de Series en C
+# Estructura del Proyecto: Cálculo de Series en C
 
 Implementación y análisis numérico de series matemáticas en C usando estructuras de control (for, while, do-while). Incluye estudio de convergencia, métricas de error de aproximación y comparación de rendimiento entre estrategias iterativas.
 
