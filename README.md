@@ -1,5 +1,8 @@
 # Estructura del Proyecto: Práctica 1 - Cálculo de Series en C
 
+Implementación y análisis numérico de series matemáticas en C usando estructuras de control (for, while, do-while). Incluye estudio de convergencia, métricas de error de aproximación y comparación de rendimiento entre estrategias iterativas.
+
+```plaintext
 series-approximation-c/
 │
 ├── .gitignore
@@ -33,3 +36,4 @@ series-approximation-c/
     │   └── especial_opt.c   # Optimización de Bernoulli y Euler.
     └── main_nivel3.c        # Cálculo de métricas: Delta_n (diferencia) y Error de Aproximación.
                              # Comparación de eficiencia entre ciclos for, while y do-while.
+```
