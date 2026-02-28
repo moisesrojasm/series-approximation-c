@@ -38,6 +38,8 @@ series-approximation-c/
                              # Comparación de eficiencia entre ciclos for, while y do-while.
 ```
 
+---
+
 ## Catálogo Detallado de las 33 Funciones
 
 A continuación se listan las series matemáticas que componen este proyecto, las cuales serán implementadas y analizadas en tres niveles de optimización algorítmica:
@@ -79,3 +81,5 @@ A continuación se listan las series matemáticas que componen este proyecto, la
 31. **Arcotangente hiperbólica**: $\text{arctanh } x = \sum_{n=0}^{\infty} \frac{x^{2n+1}}{2n+1}$
 32. **Serie combinada**: $\frac{\ln(1+x)}{1+x}$
 33. **Exponencial del seno**: $e^{\sin x}$
+
+---
