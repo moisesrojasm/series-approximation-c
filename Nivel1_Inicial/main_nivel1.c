@@ -115,46 +115,46 @@ int main(int argc, char *argv[]) {
         switch(opcion) {
             // Constantes
             case 1:  resultado = serie_01_ln2(n); break;
-            case 2:  resultado = serie_02_pi4(n); break;
-            case 3:  resultado = serie_03_pi2_6(n); break;
-            case 4:  resultado = serie_04_pi2_8(n); break;
-            case 5:  resultado = serie_05_un_medio(n); break;
-            case 6:  resultado = serie_06_tres_cuartos(n); break;
+            // case 2:  resultado = serie_02_pi4(n); break;
+            // case 3:  resultado = serie_03_pi2_6(n); break;
+            // case 4:  resultado = serie_04_pi2_8(n); break;
+            // case 5:  resultado = serie_05_un_medio(n); break;
+            // case 6:  resultado = serie_06_tres_cuartos(n); break;
 
             // Exp y Log
-            case 7:  resultado = serie_07_exp(x, n); break;
-            case 8:  resultado = serie_08_x_exp(x, n); break;
-            case 9:  resultado = serie_09_x_x2_exp(x, n); break;
-            case 10: resultado = serie_10_ln1plusx(x, n); break;
-            case 11: resultado = serie_11_variante_log(x, n); break;
+            // case 7:  resultado = serie_07_exp(x, n); break;
+            // case 8:  resultado = serie_08_x_exp(x, n); break;
+            // case 9:  resultado = serie_09_x_x2_exp(x, n); break;
+            // case 10: resultado = serie_10_ln1plusx(x, n); break;
+            // case 11: resultado = serie_11_variante_log(x, n); break;
             case 12: resultado = serie_12_ln_x_v1(x, n); break;
-            case 13: resultado = serie_13_ln_x_v2(x, n); break;
+            // case 13: resultado = serie_13_ln_x_v2(x, n); break;
 
             // Especiales
-            case 14: resultado = serie_14_binomio(x, alpha, n); break;
-            case 15: resultado = serie_15_a_potencia_x(a, x, n); break;
-            case 16: resultado = serie_16_bernoulli(n); break; // Usamos 'n' como 'k'
-            case 17: resultado = serie_17_euler_Ek(n); break;
-            case 18: resultado = serie_18_euler_E2k(n); break;
+            // case 14: resultado = serie_14_binomio(x, alpha, n); break;
+            // case 15: resultado = serie_15_a_potencia_x(a, x, n); break;
+            // case 16: resultado = serie_16_bernoulli(n); break; // Usamos 'n' como 'k'
+            // case 17: resultado = serie_17_euler_Ek(n); break;
+            // case 18: resultado = serie_18_euler_E2k(n); break;
 
             // Trigonométricas
-            case 19: resultado = serie_19_seno(x, n); break;
-            case 20: resultado = serie_20_coseno(x, n); break;
-            case 21: resultado = serie_21_tangente(x, n); break;
-            case 22: resultado = serie_22_secante(x, n); break;
-            case 23: resultado = serie_23_cosecante(x, n); break;
-            case 24: resultado = serie_24_arcsin(x, n); break;
-            case 25: resultado = serie_25_arccos(x, n); break;
-            case 26: resultado = serie_26_arctan(x, n); break;
+            // case 19: resultado = serie_19_seno(x, n); break;
+            // case 20: resultado = serie_20_coseno(x, n); break;
+            // case 21: resultado = serie_21_tangente(x, n); break;
+            // case 22: resultado = serie_22_secante(x, n); break;
+            // case 23: resultado = serie_23_cosecante(x, n); break;
+            // case 24: resultado = serie_24_arcsin(x, n); break;
+            // case 25: resultado = serie_25_arccos(x, n); break;
+            // case 26: resultado = serie_26_arctan(x, n); break;
 
             // Hiperbólicas y Varias
             case 27: resultado = serie_27_senh(x, n); break;
-            case 28: resultado = serie_28_cosh(x, n); break;
-            case 29: resultado = serie_29_tanh(x, n); break;
-            case 30: resultado = serie_30_csenh(x, n); break;
-            case 31: resultado = serie_31_arctanh(x, n); break;
-            case 32: resultado = serie_32_serie_combinada(x, n); break;
-            case 33: resultado = serie_33_exp_seno(x, n); break;
+            // case 28: resultado = serie_28_cosh(x, n); break;
+            // case 29: resultado = serie_29_tanh(x, n); break;
+            // case 30: resultado = serie_30_csenh(x, n); break;
+            // case 31: resultado = serie_31_arctanh(x, n); break;
+            // case 32: resultado = serie_32_serie_combinada(x, n); break;
+            // case 33: resultado = serie_33_exp_seno(x, n); break;
         }
 
         // Impresión (genérica) del resultado
