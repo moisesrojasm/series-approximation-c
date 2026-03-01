@@ -10,7 +10,7 @@
 
 #include <stdio.h>
 
-// 1. PROTOTIPOS DE FUNCIONES (El índice del programa)
+// 1. PROTOTIPOS DE FUNCIONES
 
 // Constantes y Fracciones (01-06)
 double serie_01_ln2(int n);
