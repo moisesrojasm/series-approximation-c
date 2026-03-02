@@ -13,10 +13,11 @@ add_executable(Nivel1 Nivel1_Inicial/main_nivel1.c)
 
 # EJECUTABLE NIVEL 2
 add_executable(Nivel2
-     Nivel2_Intermedio/main_nivel2.c
-     Nivel2_Intermedio/src/trigonometricas.c
-     Nivel2_Intermedio/src/exponenciales.c
+        Nivel2_Intermedio/main_nivel2.c
+        Nivel2_Intermedio/src/trigonometricas.c
+        Nivel2_Intermedio/src/exponenciales.c
         Nivel2_Intermedio/src/constantes.c
+        Nivel2_Intermedio/include/series_v2.h
 )
 
 # EJECUTABLE NIVEL 3

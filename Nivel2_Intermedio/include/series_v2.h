@@ -68,4 +68,4 @@ double serie_31_arctanh_v2(double x, int n);
 double serie_32_serie_combinada_v2(double x, int n);
 double serie_33_exp_seno_v2(double x, int n);
 
-#endif 
+#endif
