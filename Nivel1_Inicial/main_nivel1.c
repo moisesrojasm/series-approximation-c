@@ -10,7 +10,7 @@
 
 #include <stdio.h>
 
-// 1. PROTOTIPOS DE FUNCIONES bla bla bla
+// 1. PROTOTIPOS DE FUNCIONES
 
 // Constantes y Fracciones (01-06)
 double serie_01_ln2(int n);
@@ -138,7 +138,7 @@ int main(int argc, char *argv[]) {
             // case 18: resultado = serie_18_euler_E2k(n); break;
 
             // Trigonométricas
-            // case 19: resultado = serie_19_seno(x, n); break;
+            case 19: resultado = serie_19_seno(x, n); break;
             // case 20: resultado = serie_20_coseno(x, n); break;
             // case 21: resultado = serie_21_tangente(x, n); break;
             // case 22: resultado = serie_22_secante(x, n); break;
@@ -200,6 +200,31 @@ double serie_12_ln_x_v1(double x, int n) {
 
 
 // ZONA DE MOY: Funciones 23 al 33
+
+/**
+ * @brief Implementacion Nivel 1 de sen(x)
+ * @param x Valor real
+ * @param n Numero de terminos
+ * @return Aproximacion del seno
+ */
+
+double serie_19_seno(double x, int n) {
+    double sx = 0.0;
+
+    for (int i = 0; i < n; i++) {
+        int signo = 1 - 2*(i%2);
+        double numerador = 1.0;
+        double denominador = 1.0;
+
+        for (int j = 1; j <= (2*i+1); j++) {
+            numerador *= x;
+            denominador *= j;
+        }
+        sx += (signo * numerador / denominador);
+    }
+    return sx;
+}
+
 
 /**
  * @brief Implementacion Nivel 1 de senh(x)

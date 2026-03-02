@@ -20,11 +20,11 @@ series-approximation-c/
 ├── Nivel2_Intermedio/       # NIVEL 2: ESTABILIZACIÓN Y VALIDACIÓN.
 │   ├── include/             # Archivos de cabecera (.h).
 │   │   └── series_v2.h      # Declaración de las 33 series y macros de validación.
-|    ├── src/                 # Implementación modular de las 33 series (.c).
-|    │   ├── trigonometricas.c # Series 19-26 (sen, cos, tan, etc.).
-|    │   ├── exponenciales.c   # Series 7-13 (e^x, ln, etc.).
-|    │   └── constantes_pi.c   # Series 1-6 y 27-33 (Series de Pi, hiperbólicas y fracciones).
-|    └── main_nivel2.c        # Menú interactivo, validación de dominio (error si x está fuera de rango).
+|   ├── src/                 # Implementación modular de las 33 series (.c).
+|   │   ├── trigonometricas.c # Series 19-26 (sen, cos, tan, etc.).
+|   │   ├── exponenciales.c   # Series 7-13 (e^x, ln, etc.).
+|   │   └── constantes_pi.c   # Series 1-6 y 27-33 (Series de Pi, hiperbólicas y fracciones).
+|   └── main_nivel2.c        # Menú interactivo, validación de dominio (error si x está fuera de rango).
 |                             # Genera tablas con n={2,4,8,16,32,64,128,256}.
 │
 └── Nivel3_Avanzado/         # NIVEL 3: OPTIMIZACIÓN Y DOCUMENTACIÓN (PRODUCCIÓN).

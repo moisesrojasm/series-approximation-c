@@ -11,13 +11,13 @@ include_directories(Nivel2_Intermedio/include Nivel3_Avanzado/include)
 # EJECUTABLE NIVEL 1
 add_executable(Nivel1 Nivel1_Inicial/main_nivel1.c)
 
-
 # EJECUTABLE NIVEL 2
-# add_executable(Nivel2
-#     Nivel2_Intermedio/main_nivel2.c
-#     Nivel2_Intermedio/src/trigonometricas.c
-#     Nivel2_Intermedio/src/exponenciales.c
-# )
+add_executable(Nivel2
+     Nivel2_Intermedio/main_nivel2.c
+     Nivel2_Intermedio/src/trigonometricas.c
+     Nivel2_Intermedio/src/exponenciales.c
+        Nivel2_Intermedio/src/constantes.c
+)
 
 # EJECUTABLE NIVEL 3
 # add_executable(Nivel3
