@@ -21,7 +21,9 @@ add_executable(Nivel2
 )
 
 # EJECUTABLE NIVEL 3
-# add_executable(Nivel3
-#     Nivel3_Avanzado/main_nivel3.c
-#     Nivel3_Avanzado/src/trig_exp_opt.c
-# )
+add_executable(Nivel3
+        Nivel3_Avanzado/main_nivel3.c
+        Nivel3_Avanzado/src/trig_exp_opt.c
+        Nivel3_Avanzado/src/especial_opt.c
+        Nivel3_Avanzado/include/series_v3.h
+)
