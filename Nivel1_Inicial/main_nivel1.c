@@ -168,22 +168,19 @@ int main(int argc, char *argv[]) {
 
 // 3. IMPLEMENTACIÓN DE FUNCIONES (Lógica Nivel 1: Fuerza Bruta)
 
-// ZONA DE QUIM: Funciones 01 al 11
-
 /**
  * @brief Implementacion Nivel 1 de ln(2)
  * @param n Numero de terminos
  * @return Aproximacion de ln(2)
  */
 double serie_01_ln2(int n) {
-    // Solución Quim
+    for (int i = 1; i <= n; i++) {
+        int signo = 1 - 2*(i%2);
+        int denominador
+    }
+
     return 0.0;
 }
-
-// ... [Quim: Agregar implementaciones 02 a la 11 aquí] ...
-
-
-// ZONA DE JP: Funciones 12 al 22
 
 /**
  * @brief Implementacion Nivel 1 de ln(x) Forma 1
@@ -192,14 +189,9 @@ double serie_01_ln2(int n) {
  * @return Aproximacion de ln(x)
  */
 double serie_12_ln_x_v1(double x, int n) {
-    // Solución JP
+    //
     return 0.0;
 }
-
-// ... [JP: Agregar implementaciones 13 a la 22 aquí] ...
-
-
-// ZONA DE MOY: Funciones 23 al 33
 
 /**
  * @brief Implementacion Nivel 1 de sen(x)
@@ -243,6 +235,6 @@ double serie_20_coseno(double x, int n) {
  * @return Aproximacion del seno hiperbolico
  */
 double serie_27_senh(double x, int n) {
-    // Solución Moy
+    //
     return 0.0;
 }
