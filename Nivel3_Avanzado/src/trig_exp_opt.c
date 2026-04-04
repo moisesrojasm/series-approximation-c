@@ -9,10 +9,10 @@
 #include <math.h>
 #include "../include/series_v3.h"
 
-// QUIM: Exponenciales Puras (07 - 09)
+// Exponenciales Puras (07 - 09)
 
 double serie_07_exp_v3(double x, int n) {
-    // TODO Quim: Recurrencia O(n).
+
     return 0.0;
 }
 
@@ -27,7 +27,7 @@ double serie_09_x_x2_exp_v3(double x, int n) {
 }
 
 
-// JP: Trigonometricas Base (19 - 22)
+// Trigonometricas Base (19 - 22)
 
 double serie_19_seno_v3(double x, int n) {
     // TODO JP: Recurrencia de salto doble (solo impares).
@@ -50,7 +50,7 @@ double serie_22_secante_v3(double x, int n) {
 }
 
 
-// MOY: Inversas e Hiperbolicas (23 - 31, 33)
+// Inversas e Hiperbolicas (23 - 31, 33)
 
 double serie_23_cosecante_v3(double x, int n) {
     // TODO Moy: Usa Bernoulli nuevamente. Coordinar con JP.

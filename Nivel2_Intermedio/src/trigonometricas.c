@@ -10,7 +10,7 @@
 
 #define PI 3.14159265358979323846
 
-// JP: Funciones Trigonometricas Base (19 - 22)
+// Funciones Trigonometricas Base (19 - 22)
 
 double serie_19_seno_v2(double x, int n) {
     // TODO JP: Reducir x usando fmod(x, 2.0 * PI)
@@ -33,7 +33,7 @@ double serie_22_secante_v2(double x, int n) {
     return 0.0;
 }
 
-// MOY: Inversas, Hiperbolicas y Varias (23 - 33)
+// Inversas, Hiperbolicas y Varias (23 - 33)
 
 double serie_23_cosecante_v2(double x, int n) {
     // TODO Moy: Validar que x no sea múltiplo de PI (divisiones entre cero).

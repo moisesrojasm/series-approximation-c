@@ -8,11 +8,19 @@
 #include <math.h>
 #include "../include/series_v2.h" // Vinculación con el contrato
 
-// QUIM: Constantes y Fracciones (01 - 06)
+// Constantes y Fracciones (01 - 06)
 
 double serie_01_ln2_v2(int n) {
-    // TODO Quim: Validar internamente que n > 0.
-    return 0.0;
+    if (n<=0) {
+        printf("Error, el número de términos debe ser mayor a 0.\n");
+        return 0.0;
+    }
+    double ln2 = 0;
+    for (int i = 1; i <= n; i++) {
+        double signo = i % 2 == 0 ? 1.0: -1.0;
+        ln2 += (signo / i);
+    }
+    return ln2;
 }
 
 double serie_02_pi4_v2(int n) {
@@ -36,7 +44,7 @@ double serie_06_tres_cuartos_v2(int n) {
     return 0.0;
 }
 
-// JP: Teoremas Especiales y Numeros de Bernoulli/Euler (14 - 18)
+// Teoremas Especiales y Numeros de Bernoulli/Euler (14 - 18)
 
 double serie_14_binomio_v2(double x, double alpha, int n) {
     // TODO JP: GUARDIA DE DOMINIO REQUERIDA.

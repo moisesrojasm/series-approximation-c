@@ -9,11 +9,24 @@
 #include <math.h>
 #include "../include/series_v3.h"
 
-// QUIM: Constantes y Logaritmos (01 - 06, 10 - 11)
-
+/**
+ * @brief [O(n)] Aproximacion de la constante ln(2).
+ * @details Utiliza recurrencia: t_i = -t_{i-1} * (i-1) / i. Elimina el operador módulo.
+ * @param n Numero de terminos maximos.
+ * @return Aproximacion optimizada de ln(2).
+ */
 double serie_01_ln2_v3(int n) {
-    // TODO Quim: Recurrencia O(n). El denominador solo suma 1 en cada iteracion.
-    return 0.0;
+    if (n <= 0) return 0.0;
+
+    double ln2 = 1.0;
+    double termino_anterior = 1.0;
+
+    // Comenzamos desde el término 2
+    for (int i = 2; i <= n; i++) {
+        termino_anterior = -termino_anterior * (i - 1.0) / i;
+        ln2 += termino_anterior;
+    }
+    return ln2;
 }
 
 double serie_02_pi4_v3(int n) {
@@ -46,7 +59,7 @@ double serie_11_variante_log_v3(double x, int n) {
     return 0.0;
 }
 
-// JP: Logaritmos, Binomio, Bernoulli y Euler (12 - 18)
+// Logaritmos, Binomio, Bernoulli y Euler (12 - 18)
 
 double serie_12_ln_x_v1_v3(double x, int n) {
     // TODO JP: Aplica la recurrencia para la fraccion ((x-1)/x)^n.
@@ -81,7 +94,7 @@ double serie_18_euler_E2k_v3(int k) {
     return 0.0;
 }
 
-// MOY: Series Combinadas Restantes (32)
+// Series Combinadas Restantes (32)
 
 double serie_32_serie_combinada_v3(double x, int n) {
     // TODO Moy: Identifica los componentes de la serie y actualiza

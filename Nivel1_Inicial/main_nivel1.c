@@ -122,7 +122,7 @@ int main(int argc, char *argv[]) {
             // case 6:  resultado = serie_06_tres_cuartos(n); break;
 
             // Exp y Log
-            // case 7:  resultado = serie_07_exp(x, n); break;
+            case 7:  resultado = serie_07_exp(x, n); break;
             // case 8:  resultado = serie_08_x_exp(x, n); break;
             // case 9:  resultado = serie_09_x_x2_exp(x, n); break;
             // case 10: resultado = serie_10_ln1plusx(x, n); break;
@@ -174,12 +174,36 @@ int main(int argc, char *argv[]) {
  * @return Aproximacion de ln(2)
  */
 double serie_01_ln2(int n) {
-    for (int i = 1; i <= n; i++) {
-        int signo = 1 - 2*(i%2);
-        int denominador
+    double ln2 = 0;
+    int denominador = 1;
+    for (int i = 0; i <= n; i++) {
+        double signo = 1 - 2*(i%2);
+        ln2 += (signo / denominador);
+        denominador ++;
     }
+    return ln2;
+}
 
-    return 0.0;
+/**
+ * @brief Implementacion Nivel 1 de e^x
+ * @param x Valor real
+ * @param n Numero de terminos
+ * @return Aproximacion de e^x
+ */
+double serie_07_exp(double x, int n) {
+    double exp_sum = 0.0;
+
+    for (int i = 0; i < n; i++) {
+        double numerador = 1.0;
+        double denominador = 1.0;
+
+        for (int j = 1; j <= i; j++) {
+            numerador *= x;
+            denominador *= j;
+        }
+        exp_sum += (numerador / denominador);
+    }
+    return exp_sum;
 }
 
 /**
