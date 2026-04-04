@@ -225,6 +225,16 @@ double serie_19_seno(double x, int n) {
     return sx;
 }
 
+/**
+ * @brief Implementacion Nivel 1 de cos(x)
+ * @param x Valor real
+ * @param n Numero de terminos
+ * @return Aproximacion del coseno
+ */
+double serie_20_coseno(double x, int n) {
+
+    return 0.0;
+}
 
 /**
  * @brief Implementacion Nivel 1 de senh(x)
