@@ -6,21 +6,68 @@
 
 #include <stdio.h>
 #include <math.h>
-#include "../include/series_v2.h" // Vinculación con el contrato
 
-#define PI 3.14159265358979323846
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
 
-// Funciones Trigonometricas Base (19 - 22)
-
+/**
+ * @brief Implementacion Nivel 2 de sen(x)
+ * @details Utiliza fmod() para reduccion de argumento y estabilizacion de memoria.
+ * @param x Valor en radianes
+ * @param n Numero de terminos
+ * @return Aproximacion estabilizada del seno
+ */
 double serie_19_seno_v2(double x, int n) {
-    // TODO JP: Reducir x usando fmod(x, 2.0 * PI)
-    // TODO JP: Insertar motor de sumatoria
-    return 0.0;
+    if (n <= 0) return 0.0;
+
+    // MAGIA NIVEL 2: Reducimos x al rango de [-2PI, 2PI]
+    // Si x es 1000, le quitamos todas las vueltas completas y deja solo lo util
+    x = fmod(x, 2.0 * M_PI);
+
+    double sx = 0.0;
+
+    for (int i = 0; i < n; i++) {
+        double signo = (i % 2 != 0) ? -1.0 : 1.0;
+        double numerador = 1.0;
+        double denominador = 1.0;
+
+        for (int j = 1; j <= (2 * i + 1); j++) {
+            numerador *= x;
+            denominador *= j;
+        }
+
+        sx += (signo * numerador / denominador);
+    }
+    return sx;
 }
 
+/**
+ * @brief Implementacion Nivel 2 de cos(x)
+ * @details Utiliza fmod() para reduccion de argumento.
+ */
 double serie_20_coseno_v2(double x, int n) {
-    // TODO JP: Reducir x usando fmod(x, 2.0 * PI)
-    return 0.0;
+    if (n <= 0) return 0.0;
+
+    // Reduccion estricta de Nivel 2
+    x = fmod(x, 2.0 * M_PI);
+
+    double cx = 0.0;
+
+    for (int i = 0; i < n; i++) {
+        double signo = (i % 2 != 0) ? -1.0 : 1.0;
+        double numerador = 1.0;
+        double denominador = 1.0;
+
+        for (int j = 1; j <= (2 * i); j++) {
+            numerador *= x;
+            denominador *= j;
+        }
+
+        cx += (signo * numerador / denominador);
+    }
+
+    return cx;
 }
 
 double serie_21_tangente_v2(double x, int n) {

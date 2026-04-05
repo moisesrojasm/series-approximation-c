@@ -11,6 +11,11 @@
 
 
 double serie_07_exp_v2(double x, int n) {
+    if (n<=0) {
+        printf("Error, el número de términos debe ser mayor a 0.\n");
+        return 0.0;
+    }
+
     double exp_suma = 0;
     for (int i = 1; i <=n; i++) {
         double numerador = 1;

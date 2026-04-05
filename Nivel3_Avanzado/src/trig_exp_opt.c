@@ -11,9 +11,25 @@
 
 // Exponenciales Puras (07 - 09)
 
+/**
+ * @brief [O(n)] Serie de Taylor para e^x.
+ * @details Utiliza recurrencia: t_i = t_{i-1} * (x / i).
+ * @param x Exponente real.
+ * @param n Numero de terminos.
+ * @return Aproximacion optimizada de e^x.
+ */
 double serie_07_exp_v3(double x, int n) {
+    if (n <= 0) return 0.0;
 
-    return 0.0;
+    double exp_sum = 1.0;
+    double termino_anterior = 1.0;
+
+    for (int i = 1; i < n; i++) {
+        termino_anterior = termino_anterior * (x / i);
+
+        exp_sum += termino_anterior;
+    }
+    return exp_sum;
 }
 
 double serie_08_x_exp_v3(double x, int n) {
@@ -34,9 +50,32 @@ double serie_19_seno_v3(double x, int n) {
     return 0.0;
 }
 
+/**
+ * @brief [O(n)] Serie de Maclaurin para cos(x).
+ * @details Recurrencia de salto doble par.
+ */
 double serie_20_coseno_v3(double x, int n) {
-    // TODO JP: Recurrencia de salto doble (solo pares).
-    return 0.0;
+    if (n <= 0) return 0.0;
+
+    x = fmod(x, 2.0 * M_PI);
+
+    // El termino 0 del coseno siempre es 1 (x^0 / 0!)
+    double cx = 1.0;
+    double termino_anterior = 1.0;
+    double x_cuadrada = x * x;
+
+    // Motor O(n). Arrancamos en i = 1 porque ya tenemos el termino 0
+    for (int i = 1; i < n; i++) {
+        // Los denominadores del salto doble par
+        double divisor = (2.0 * i - 1.0) * (2.0 * i);
+
+        // Recurrencia directa
+        termino_anterior = -termino_anterior * x_cuadrada / divisor;
+
+        cx += termino_anterior;
+    }
+
+    return cx;
 }
 
 double serie_21_tangente_v3(double x, int n) {
