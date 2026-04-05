@@ -57,7 +57,7 @@ double serie_32_serie_combinada(double x, int n);
 double serie_33_exp_seno(double x, int n);
 
 
-// 2. FUNCIÓN PRINCIPAL (El centro de mando)
+// 2. FUNCIÓN PRINCIPAL
 
 int main(int argc, char *argv[]) {
     int opcion, n;
@@ -139,7 +139,7 @@ int main(int argc, char *argv[]) {
 
             // Trigonométricas
             case 19: resultado = serie_19_seno(x, n); break;
-            // case 20: resultado = serie_20_coseno(x, n); break;
+            case 20: resultado = serie_20_coseno(x, n); break;
             // case 21: resultado = serie_21_tangente(x, n); break;
             // case 22: resultado = serie_22_secante(x, n); break;
             // case 23: resultado = serie_23_cosecante(x, n); break;
@@ -168,97 +168,595 @@ int main(int argc, char *argv[]) {
 
 // 3. IMPLEMENTACIÓN DE FUNCIONES (Lógica Nivel 1: Fuerza Bruta)
 
-/**
- * @brief Implementacion Nivel 1 de ln(2)
- * @param n Numero de terminos
- * @return Aproximacion de ln(2)
- */
 double serie_01_ln2(int n) {
-    double ln2 = 0;
-    int denominador = 1;
-    for (int i = 0; i <= n; i++) {
-        double signo = 1 - 2*(i%2);
-        ln2 += (signo / denominador);
-        denominador ++;
+    double suma = 0;
+    for (int i = 1; i <= n; i++) {
+        double signo = (i % 2 != 0) ? 1.0 : -1.0;
+        suma += (signo / i);
     }
-    return ln2;
+    return suma;
+}
+
+double serie_02_pi4(int n) {
+    double suma = 0;
+    for (int i = 0; i < n; i++) {
+        double signo = (i % 2 == 0) ? 1.0 : -1.0;
+        suma += (signo / (2.0 * i + 1.0));
+    }
+    return suma;
+}
+
+double serie_03_pi2_6(int n) {
+    double suma = 0;
+    for (int i = 1; i <= n; i++) suma += (1.0 / (double)(i * i));
+    return suma;
+}
+
+double serie_04_pi2_8(int n) {
+    double suma = 0;
+    for (int i = 0; i < n; i++) {
+        double d = 2.0 * i + 1.0;
+        suma += (1.0 / (d * d));
+    }
+    return suma;
+}
+
+double serie_05_un_medio(int n) {
+    double suma = 0;
+    for (int i = 0; i < n; i++) {
+        suma += 1.0 / ((2.0 * i + 1.0) * (2.0 * i + 3.0));
+    }
+    return suma;
+}
+
+double serie_06_tres_cuartos(int n) {
+    double suma = 0;
+    for (int i = 1; i <= n; i++) {
+        suma += 1.0 / (double)(i * (i + 2));
+    }
+    return suma;
+}
+
+double serie_07_exp(double x, int n) {
+    double suma = 0;
+    for (int i = 0; i < n; i++) {
+        double num = 1.0, den = 1.0;
+        for (int j = 1; j <= i; j++) { num *= x; den *= j; }
+        suma += (num / den);
+    }
+    return suma;
 }
 
 /**
- * @brief Implementacion Nivel 1 de e^x
- * @param x Valor real
- * @param n Numero de terminos
- * @return Aproximacion de e^x
+ * @brief Implementacion Nivel 1 de x * e^x
  */
-double serie_07_exp(double x, int n) {
-    double exp_sum = 0.0;
+double serie_08_x_exp(double x, int n) {
+    double suma = 0.0;
 
-    for (int i = 0; i < n; i++) {
-        double numerador = 1.0;
-        double denominador = 1.0;
+    for (int i = 1; i <= n; i++) {
+        double num = i;
+        double den = 1.0;
 
         for (int j = 1; j <= i; j++) {
-            numerador *= x;
-            denominador *= j;
+            num *= x;
+            den *= j;
         }
-        exp_sum += (numerador / denominador);
+        suma += (num / den);
     }
-    return exp_sum;
+    return suma;
 }
 
 /**
- * @brief Implementacion Nivel 1 de ln(x) Forma 1
- * @param x Valor real (x > 0)
- * @param n Numero de terminos
- * @return Aproximacion de ln(x)
+ * @brief Implementacion Nivel 1 de (x + x^2) * e^x
  */
+double serie_09_x_x2_exp(double x, int n) {
+    double suma = 0.0;
+
+    for (int i = 1; i <= n; i++) {
+        double num = (double)(i * i);
+        double den = 1.0;
+
+        // Calculamos x^i / i!
+        for (int j = 1; j <= i; j++) {
+            num *= x;
+            den *= j;
+        }
+        suma += (num / den);
+    }
+    return suma;
+}
+
+double serie_10_ln1plusx(double x, int n) {
+    double suma = 0;
+    for (int i = 1; i <= n; i++) {
+        double num = 1.0;
+        for (int j = 1; j <= i; j++) num *= x;
+        double signo = (i % 2 != 0) ? 1.0 : -1.0;
+        suma += (signo * num / i);
+    }
+    return suma;
+}
+
+double serie_11_variante_log(double x, int n) {
+    double suma = 0;
+    for (int i = 0; i < n; i++) {
+        double num = 1.0;
+        int exp = 2 * i + 1;
+        for (int j = 1; j <= exp; j++) num *= x;
+        suma += (num / exp);
+    }
+    return 2.0 * suma;
+}
+
 double serie_12_ln_x_v1(double x, int n) {
-    //
-    return 0.0;
+    double suma = 0;
+    double val = (x - 1) / (x + 1);
+    for (int i = 0; i < n; i++) {
+        double num = 1.0;
+        int exp = 2 * i + 1;
+        for (int j = 1; j <= exp; j++) num *= val;
+        suma += (num / exp);
+    }
+    return 2.0 * suma;
+}
+
+double serie_13_ln_x_v2(double x, int n) {
+    double suma = 0;
+    double val = (x - 1) / x;
+    for (int i = 1; i <= n; i++) {
+        double num = 1.0;
+        for (int j = 1; j <= i; j++) num *= val;
+        suma += (num / i);
+    }
+    return suma;
+}
+
+double serie_14_binomio(double x, double alpha, int n) {
+    double suma = 0;
+    for (int i = 0; i < n; i++) {
+        double comb = 1.0, pot = 1.0;
+        for (int j = 1; j <= i; j++) {
+            comb *= (alpha - j + 1) / j;
+            pot *= x;
+        }
+        suma += (comb * pot);
+    }
+    return suma;
+}
+
+#include <math.h>
+
+/**
+ * @brief Implementacion Nivel 1 de a^x
+ * @details Validada. Excelente reutilizacion de codigo.
+ */
+double serie_15_a_potencia_x(double a, double x, int n) {
+    double lna = log(a); // math.h
+    double val = x * lna;
+    return serie_07_exp(val, n);
 }
 
 /**
- * @brief Implementacion Nivel 1 de sen(x)
- * @param x Valor real
- * @param n Numero de terminos
- * @return Aproximacion del seno
+ * @brief Implementacion Nivel 1 de Bernoulli
+ * @details ADVERTENCIA: Complejidad O(k!). Se congelara para k > 12.
  */
+double serie_16_bernoulli(int k) {
+    // Caso base de la formula
+    if (k == 0) return 1.0;
+
+    double suma = 0.0;
+    for (int i = 0; i < k; i++) {
+        // Combinatoria de fuerza bruta: k! / (i! * (k-i)!)
+        double fact_k = 1.0, fact_i = 1.0, fact_ki = 1.0;
+        for(int p = 1; p <= k; p++) fact_k *= p;
+        for(int p = 1; p <= i; p++) fact_i *= p;
+        for(int p = 1; p <= (k - i); p++) fact_ki *= p;
+        double comb = fact_k / (fact_i * fact_ki);
+
+        // La funcion se invoca a si misma para obtener B_i
+        suma += comb * (serie_16_bernoulli(i) / (k + 1.0 - i));
+    }
+
+    return -suma;
+}
+
+/**
+ * @brief Implementacion Nivel 1 de Euler Ek (Aproximacion Asintotica)
+ */
+double serie_17_euler_Ek(int k) {
+    double pi = 3.14159265358979323846;
+
+    // Multiplicador 1: 2^(2k+2)
+    double term_2 = 1.0;
+    for(int j = 1; j <= (2 * k + 2); j++) term_2 *= 2.0;
+
+    // Multiplicador 2: (2k)!
+    double term_fact = 1.0;
+    for(int j = 1; j <= (2 * k); j++) term_fact *= j;
+
+    // Denominador: pi^(2k+1)
+    double term_pi = 1.0;
+    for(int j = 1; j <= (2 * k + 1); j++) term_pi *= pi;
+
+    double factor_externo = (term_2 * term_fact) / term_pi;
+
+    // Sumatoria infinita aproximada a 50 terminos
+    double suma_infinita = 0.0;
+    for (int n = 0; n < 50; n++) {
+        double signo = (n % 2 == 0) ? 1.0 : -1.0;
+        double base = 2.0 * n + 1.0; // Numeros impares: 1, 3, 5...
+
+        double den = 1.0;
+        for(int j = 1; j <= (2 * k + 1); j++) den *= base;
+
+        suma_infinita += (signo / den);
+    }
+
+    return factor_externo * suma_infinita;
+}
+
+/**
+ * @brief Implementacion Nivel 1 de Euler E2k (Sumatoria Doble)
+ * @details Extrae la parte real del operador imaginario i^{1-m}.
+ */
+double serie_18_euler_E2k(int k) {
+    double suma_exterior = 0.0;
+
+    for (int m = 1; m <= 2 * k + 1; m++) {
+        // Si m es par, i^{1-m} es imaginario puro y la sumatoria interna da 0.
+        // Solo procesamos los m impares para obtener la parte real.
+        if (m % 2 == 0) continue;
+
+        // Si m impar, i^{1-m} oscila entre 1 y -1
+        double signo_imaginario = (m % 4 == 1) ? 1.0 : -1.0;
+
+        double suma_interior = 0.0;
+        for (int j = 0; j <= m; j++) {
+            // Combinatoria (m en j)
+            double fact_m = 1.0, fact_j = 1.0, fact_mj = 1.0;
+            for(int p = 1; p <= m; p++) fact_m *= p;
+            for(int p = 1; p <= j; p++) fact_j *= p;
+            for(int p = 1; p <= (m - j); p++) fact_mj *= p;
+            double comb = fact_m / (fact_j * fact_mj);
+
+            double signo_j = (j % 2 == 0) ? 1.0 : -1.0;
+
+            // Potencia: (m - 2j)^(2k+1)
+            double base = m - 2.0 * j;
+            double pot = 1.0;
+            for(int p = 1; p <= (2 * k + 1); p++) pot *= base;
+
+            suma_interior += comb * signo_j * pot;
+        }
+
+        // Denominador externo: 2^m * m
+        double den = 1.0;
+        for(int p = 1; p <= m; p++) den *= 2.0;
+        den *= m;
+
+        suma_exterior += signo_imaginario * (suma_interior / den);
+    }
+
+    return suma_exterior;
+}
 
 double serie_19_seno(double x, int n) {
-    double sx = 0.0;
+    double suma = 0;
+    for (int i = 0; i < n; i++) {
+        double num = 1.0, den = 1.0;
+        for (int j = 1; j <= (2 * i + 1); j++) { num *= x; den *= j; }
+        double signo = (i % 2 == 0) ? 1.0 : -1.0;
+        suma += (signo * num / den);
+    }
+    return suma;
+}
+
+double serie_20_coseno(double x, int n) {
+    double suma = 0;
+    for (int i = 0; i < n; i++) {
+        double num = 1.0, den = 1.0;
+        for (int j = 1; j <= (2 * i); j++) { num *= x; den *= j; }
+        double signo = (i % 2 == 0) ? 1.0 : -1.0;
+        suma += (signo * num / den);
+    }
+    return suma;
+}
+
+// 21-23 requieren Bernoulli/Euler. Se implementan invocando dichas funciones.
+
+/**
+ * @brief Implementacion Nivel 1 de tan(x)
+ */
+double serie_21_tangente(double x, int n) {
+    double suma = 0.0;
+
+    // La formula general empieza en n=1
+    for (int i = 1; i <= n; i++) {
+        double B_2i = serie_16_bernoulli(2 * i);
+
+        // Calculamos (-4)^n y 4^n a fuerza bruta
+        double pot_neg4 = 1.0, pot_4 = 1.0;
+        for (int j = 1; j <= i; j++) {
+            pot_neg4 *= -4.0;
+            pot_4 *= 4.0;
+        }
+
+        // Calculamos x^(2n-1) y (2n)! a fuerza bruta
+        double pot_x = 1.0, fact_2i = 1.0;
+        for (int j = 1; j <= (2 * i - 1); j++) pot_x *= x;
+        for (int j = 1; j <= (2 * i); j++) fact_2i *= j;
+
+        suma += (B_2i * pot_neg4 * (1.0 - pot_4) * pot_x) / fact_2i;
+    }
+    return suma;
+}
+
+/**
+ * @brief Implementacion Nivel 1 de sec(x)
+ */
+double serie_22_secante(double x, int n) {
+    double suma = 0.0;
 
     for (int i = 0; i < n; i++) {
-        int signo = 1 - 2*(i%2);
-        double numerador = 1.0;
-        double denominador = 1.0;
+        // En la formula, la sumatoria depende de E_2n.
+        // Nuestra funcion serie_18 ya calcula E_2k pasandole k.
+        double E_2i = serie_18_euler_E2k(i);
+        double signo = (i % 2 == 0) ? 1.0 : -1.0;
 
-        for (int j = 1; j <= (2*i+1); j++) {
-            numerador *= x;
-            denominador *= j;
+        // Calculamos x^(2n) y (2n)! a fuerza bruta
+        double pot_x = 1.0, fact_2i = 1.0;
+        for (int j = 1; j <= (2 * i); j++) {
+            pot_x *= x;
+            fact_2i *= j;
         }
-        sx += (signo * numerador / denominador);
+
+        suma += (signo * E_2i * pot_x) / fact_2i;
     }
-    return sx;
+    return suma;
 }
 
 /**
- * @brief Implementacion Nivel 1 de cos(x)
- * @param x Valor real
- * @param n Numero de terminos
- * @return Aproximacion del coseno
+ * @brief Implementacion Nivel 1 de csc(x)
  */
-double serie_20_coseno(double x, int n) {
+double serie_23_cosecante(double x, int n) {
+    double suma = 1.0 / x;
 
-    return 0.0;
+    for (int i = 1; i < n; i++) {
+        double B_2i = serie_16_bernoulli(2 * i);
+
+        // Calculamos 2^(2n-1)
+        double pot_2 = 1.0;
+        for (int j = 1; j <= (2 * i - 1); j++) pot_2 *= 2.0;
+
+        // Calculamos x^(2n-1)
+        double pot_x = 1.0;
+        for (int j = 1; j <= (2 * i - 1); j++) pot_x *= x;
+
+        // Calculamos (2n)!
+        double fact_2i = 1.0;
+        for (int j = 1; j <= (2 * i); j++) fact_2i *= j;
+
+        suma += (2.0 * (pot_2 - 1.0) * B_2i * pot_x) / fact_2i;
+    }
+    return suma;
+}
+
+double serie_24_arcsin(double x, int n) {
+    double suma = 0;
+    for (int i = 0; i < n; i++) {
+        double num = 1.0, den = 1.0;
+        // Fuerza bruta: (2i)! / (4^i * (i!)^2 * (2i+1))
+        for (int j = 1; j <= (2*i); j++)
+            num *= j;
+        for (int j = 1; j <= (2*i+1); j++)
+            num *= x;
+        for (int j = 1; j <= i; j++) {
+            den *= 4.0; den *= (j * j);
+        }
+        den *= (2 * i + 1);
+        suma += (num / den);
+    }
+    return suma;
 }
 
 /**
- * @brief Implementacion Nivel 1 de senh(x)
- * @param x Valor real
- * @param n Numero de terminos
- * @return Aproximacion del seno hiperbolico
+ * @brief Implementacion Nivel 1 de arccos(x)
+ * @details Resuelve la sumatoria expandida explicitamente mediante fuerza bruta,
+ * calculando factoriales y potencias desde cero en cada iteracion.
  */
+double serie_25_arccos(double x, int n) {
+    double pi_medios = 1.57079632679489661923;
+    double suma_interna = 0.0;
+
+    for (int i = 0; i < n; i++) {
+        double num = 1.0, den = 1.0;
+
+        // Calculamos el numerador: (2i)! * x^(2i+1)
+        for (int j = 1; j <= (2 * i); j++)
+            num *= j;
+        for (int j = 1; j <= (2 * i + 1); j++)
+            num *= x;
+
+        // Calculamos el denominador: 4^i * (i!)^2 * (2i+1)
+        for (int j = 1; j <= i; j++) {
+            den *= 4.0;
+            den *= (j * j);
+        }
+        den *= (2 * i + 1);
+
+        // Acumulamos el termino de la sumatoria
+        suma_interna += (num / den);
+    }
+
+    // Aplicamos la formula exacta del documento: PI/2 - (sumatoria)
+    return pi_medios - suma_interna;
+}
+
+double serie_26_arctan(double x, int n) {
+    double suma = 0.0;
+    double pi_medios = 1.57079632679489661923;
+
+    // CASO 1: |x| < 1
+    if (x > -1.0 && x < 1.0) {
+        for (int i = 0; i < n; i++) {
+            double num = 1.0;
+            for (int j = 1; j <= (2 * i + 1); j++) num *= x;
+            double signo = (i % 2 == 0) ? 1.0 : -1.0;
+            suma += (signo * num / (2 * i + 1));
+        }
+        return suma;
+    }
+
+    // CASOS 2 y 3: x >= 1 o x <= -1
+    for (int i = 0; i < n; i++) {
+        double den_x = 1.0;
+        for (int j = 1; j <= (2 * i + 1); j++) den_x *= x; // x^(2i+1)
+        double signo = (i % 2 == 0) ? 1.0 : -1.0;
+
+        // Sumamos: (-1)^i / ((2i+1) * x^(2i+1))
+        suma += (signo / ((2 * i + 1) * den_x));
+    }
+
+    // Retornamos dependiendo del signo de x
+    if (x >= 1.0) {
+        return pi_medios - suma;
+    } else {
+        return -pi_medios - suma;
+    }
+}
+
 double serie_27_senh(double x, int n) {
-    //
-    return 0.0;
+    double suma = 0;
+    for (int i = 0; i < n; i++) {
+        double num = 1.0, den = 1.0;
+        for (int j = 1; j <= (2 * i + 1); j++) { num *= x; den *= j; }
+        suma += (num / den);
+    }
+    return suma;
+}
+
+double serie_28_cosh(double x, int n) {
+    double suma = 0;
+    for (int i = 0; i < n; i++) {
+        double num = 1.0, den = 1.0;
+        for (int j = 1; j <= (2 * i); j++) { num *= x; den *= j; }
+        suma += (num / den);
+    }
+    return suma;
+}
+
+/**
+ * @brief Implementacion Nivel 1 de tanh(x)
+ * @details Utiliza la funcion recursiva de Bernoulli (Complejidad masiva).
+ */
+double serie_29_tanh(double x, int n) {
+    double suma = 0.0;
+
+    // La formula (29) arranca su sumatoria en n=1
+    for (int i = 1; i <= n; i++) {
+        // Obtenemos B_{2n}
+        double B_2i = serie_16_bernoulli(2 * i);
+
+        // Calculamos 4^n
+        double pot_4 = 1.0;
+        for (int j = 1; j <= i; j++) pot_4 *= 4.0;
+
+        // Calculamos x^(2n-1)
+        double pot_x = 1.0;
+        for (int j = 1; j <= (2 * i - 1); j++) pot_x *= x;
+
+        // Calculamos (2n)!
+        double fact_2i = 1.0;
+        for (int j = 1; j <= (2 * i); j++) fact_2i *= j;
+
+        // Ensamblamos la bestia: [ B_{2n} * 4^n * (4^n - 1) * x^(2n-1) ] / (2n)!
+        suma += (B_2i * pot_4 * (pot_4 - 1.0) * pot_x) / fact_2i;
+    }
+
+    return suma;
+}
+
+/**
+ * @brief Implementacion Nivel 1 de arcsenh(x)
+ * @details El denominador requiere la construccion de 4^i * (i!)^2 * (2i+1).
+ */
+double serie_30_csenh(double x, int n) {
+    double suma = 0.0;
+
+    for (int i = 0; i < n; i++) {
+        double num = 1.0, den = 1.0;
+
+        // Numerador: (2i)! * x^(2i+1)
+        for (int j = 1; j <= (2 * i); j++)
+            num *= j;
+        for (int j = 1; j <= (2 * i + 1); j++)
+            num *= x;
+
+        // Denominador estricto: 4^i * (i!)^2 * (2i+1)
+        for (int j = 1; j <= i; j++) {
+            den *= 4.0;
+            den *= (j * j); // Acumulamos (i!)^2 en cada iteracion
+        }
+        den *= (2 * i + 1);
+
+        double signo = (i % 2 == 0) ? 1.0 : -1.0;
+        suma += (signo * num / den);
+    }
+    return suma;
+}
+
+/**
+ * @brief Implementacion Nivel 1 de arctanh(x)
+ */
+double serie_31_arctanh(double x, int n) {
+    double suma = 0.0;
+    for (int i = 0; i < n; i++) {
+        double num = 1.0;
+        for (int j = 1; j <= (2 * i + 1); j++) num *= x;
+        suma += (num / (2 * i + 1));
+    }
+    return suma;
+}
+
+/**
+ * @brief Implementacion Nivel 1 de ln(1+x)/(1+x)
+ * @details Utiliza el calculo iterativo de Numeros Armonicos.
+ */
+double serie_32_serie_combinada(double x, int n) {
+    double suma = 0.0;
+    for (int i = 1; i <= n; i++) {
+        double h = 0.0;
+        for (int j = 1; j <= i; j++)
+            h += 1.0 / j;
+
+        double pot = 1.0;
+        for (int j = 1; j <= i; j++)
+            pot *= x;
+
+        double signo = (i % 2 != 0) ? 1.0 : -1.0;
+        suma += (signo * h * pot);
+    }
+    return suma;
+}
+
+/**
+ * @brief Implementacion Nivel 1 de e^sen(x)
+ * @details Composicion polinomial estatica por falta de termino general.
+ */
+double serie_33_exp_seno(double x, int n) {
+    if (n <= 0)
+        return 0.0;
+
+    double suma = 1.0; // Termino 1
+    if (n > 1)
+        suma += x; // Termino 2
+    if (n > 2)
+        suma += (x * x) / 2.0; // Termino 3
+    // Termino 4 seria x^3, pero su coeficiente es 0
+    if (n > 4)
+        suma -= (x * x * x * x) / 8.0; // Termino 5
+    if (n > 5)
+        suma -= (x * x * x * x * x) / 15.0; // Termino 6
+
+    return suma;
 }
