@@ -93,7 +93,7 @@ int main(int argc, char *argv[]) {
             continue;
         }
 
-        // Pedimos el número de términos o límite 'k' (Esta aplica para todas las funciones)
+        // Aplica para todas las funciones
         printf("Ingrese el numero de terminos o limite (n/k): ");
         scanf("%d", &n);
 
@@ -431,7 +431,8 @@ double serie_18_euler_E2k(int k) {
 
         // Denominador externo: 2^m * m
         double den = 1.0;
-        for(int p = 1; p <= m; p++) den *= 2.0;
+        for(int p = 1; p <= m; p++)
+         *= 2.0;
         den *= m;
 
         suma_exterior += signo_imaginario * (suma_interior / den);
@@ -444,7 +445,8 @@ double serie_19_seno(double x, int n) {
     double suma = 0;
     for (int i = 0; i < n; i++) {
         double num = 1.0, den = 1.0;
-        for (int j = 1; j <= (2 * i + 1); j++) { num *= x; den *= j; }
+        for (int j = 1; j <= (2 * i + 1); j++)
+            { num *= x; den *= j; }
         double signo = (i % 2 == 0) ? 1.0 : -1.0;
         suma += (signo * num / den);
     }
@@ -455,7 +457,8 @@ double serie_20_coseno(double x, int n) {
     double suma = 0;
     for (int i = 0; i < n; i++) {
         double num = 1.0, den = 1.0;
-        for (int j = 1; j <= (2 * i); j++) { num *= x; den *= j; }
+        for (int j = 1; j <= (2 * i); j++)
+            { num *= x; den *= j; }
         double signo = (i % 2 == 0) ? 1.0 : -1.0;
         suma += (signo * num / den);
     }
