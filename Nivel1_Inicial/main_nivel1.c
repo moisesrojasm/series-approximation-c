@@ -432,7 +432,7 @@ double serie_18_euler_E2k(int k) {
         // Denominador externo: 2^m * m
         double den = 1.0;
         for(int p = 1; p <= m; p++)
-         *= 2.0;
+         den *= 2.0;
         den *= m;
 
         suma_exterior += signo_imaginario * (suma_interior / den);
