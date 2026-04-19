@@ -5,35 +5,36 @@ Implementación y análisis numérico de series matemáticas en C usando estruct
 ```plaintext
 series-approximation-c/
 │
-├── .gitignore
-├── README.md 
+├── .idea/                   # Configuración del entorno de desarrollo (CLion).
+├── cmake-build-debug/       # Archivos y binarios de compilación generados por CMake.
+├── .gitignore               
+├── CMakeLists.txt           # Configuración principal de compilación para el proyecto.
+├── LICENSE                  
+├── README.md                
 │
-├── docs/                    
-|   ├── Reporte_Final.pdf    # Reporte con tablas, discusión de convergencia y capturas.
-|   ├── diagramas/           # Diagramas de flujo manuales o exportados de Doxygen.
-|   └── doxygen_output/      # Documentación HTML/LaTeX generada automáticamente por Doxygen.
-│
-├── Nivel1_Inicial/          # NIVEL 1: SOLUCIÓN DIRECTA (FUERZA BRUTA).
-|   └── main_nivel1.c        # Un solo archivo con las 33 series implementadas de forma simple, O(n²).
-|                            
-│
+├── Nivel1_Inicial/          # NIVEL 1: SOLUCIÓN DIRECTA.
+│   ├── .gitkeep             
+│   └── main_nivel1.c        # Un solo archivo con las 33 series implementadas de forma simple, O(n²).
+│                            
 ├── Nivel2_Intermedio/       # NIVEL 2: ESTABILIZACIÓN Y VALIDACIÓN.
-│   ├── include/             # Archivos de cabecera (.h).
+│   ├── include/             
 │   │   └── series_v2.h      # Declaración de las 33 series y macros de validación.
-|   ├── src/                 
-|   │   ├── trigonometricas.c # Series 19-26.
-|   │   ├── exponenciales.c   # Series 7-13.
-|   │   └── constantes_pi.c   # Series 1-6 y 27-33.
-|   └── main_nivel2.c        # Validación de dominio.
-|                             # Genera tablas con n={2,4,8,16,32,64,128,256}.
+│   ├── src/                 
+│   │   ├── constantes.c     # Series 1-6 y 27-33.
+│   │   ├── exponenciales.c  # Series 7-13.
+│   │   └── trigonometricas.c # Series 19-26.
+│   ├── .gitkeep             
+│   └── main_nivel2.c        # Validación de dominio. Genera tablas con n={2,4,8,16,32,64,128,256}.
 │
-└── Nivel3_Avanzado/         # NIVEL 3: OPTIMIZACIÓN Y DOCUMENTACIÓN (PRODUCCIÓN).
-    ├── Doxyfile             # Archivo de configuración para Doxygen.
-    ├── include/             # Headers documentados con estándares Doxygen.
-    │   └── series_v3.h      
-    ├── src/                 # Implementación con RECURRENCIA (O(n)).
-    │   ├── trig_exp_opt.c   # Se aprovecha el término anterior para calcular el siguiente.
-    │   └── especial_opt.c   
+└── Nivel3_Avanzado/         # NIVEL 3: OPTIMIZACIÓN Y DOCUMENTACIÓN.
+    ├── html/                # Documentación web interactiva generada automáticamente por Doxygen.
+    ├── include/             
+    │   └── series_v3.h      # Headers documentados con estándares Doxygen.
+    ├── latex/               # Documentación en formato PDF/LaTeX generada por Doxygen.
+    ├── src/                 
+    │   ├── especial_opt.c   # Implementación optimizada de funciones especiales.
+    │   └── trig_exp_opt.c   # Funciones trigonométricas y exponenciales por recurrencia O(n).
+    ├── .gitkeep             
     └── main_nivel3.c        # Cálculo de métricas: Delta_n (diferencia) y Error de Aproximación.
                              
 ```

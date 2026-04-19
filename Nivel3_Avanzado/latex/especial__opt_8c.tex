@@ -1,0 +1,559 @@
+\doxysection{src/\+especial\+\_\+opt.c File Reference}
+\hypertarget{especial__opt_8c}{}\label{especial__opt_8c}\index{src/especial\_opt.c@{src/especial\_opt.c}}
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
+{\ttfamily \+\#include $<$math.\+h$>$}\newline
+{\ttfamily \+\#include "{}../\+include/\+series\+\_\+v3.\+h"{}}\newline
+Include dependency graph for especial\+\_\+opt.\+c:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{especial__opt_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \doxymbox{\hyperlink{especial__opt_8c_a9b5f83cdd7ca02b956d2d324d2f8d3b7}{serie\+\_\+01\+\_\+ln2\+\_\+v3}} (int n)
+\begin{DoxyCompactList}\small\item\em \+[O(n)]\+ Aproximacion de la constante ln(2). \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{especial__opt_8c_aa5d5a085945a5597ec962eb1e5cd91dd}{serie\+\_\+02\+\_\+pi4\+\_\+v3}} (int n)
+\begin{DoxyCompactList}\small\item\em \+[O(n)]\+ Aproximacion de pi/\+4. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{especial__opt_8c_a114c02d9d9417f406ff8d1869e6d3091}{serie\+\_\+03\+\_\+pi2\+\_\+6\+\_\+v3}} (int n)
+\begin{DoxyCompactList}\small\item\em \+[O(n)]\+ Aproximacion de pi\texorpdfstring{$^\wedge$}{\string^}2/\+6. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{especial__opt_8c_aa0a7490db913fe7600fe33c3a04bb153}{serie\+\_\+04\+\_\+pi2\+\_\+8\+\_\+v3}} (int n)
+\begin{DoxyCompactList}\small\item\em \+[O(n)]\+ Aproximacion de pi\texorpdfstring{$^\wedge$}{\string^}2/\+8. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{especial__opt_8c_aafd0ba6e06953b2d1b99ddb61d7cd953}{serie\+\_\+05\+\_\+un\+\_\+medio\+\_\+v3}} (int n)
+\begin{DoxyCompactList}\small\item\em \+[O(n)]\+ Aproximacion de la fraccion 1/\+2. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{especial__opt_8c_a7d745acb2625d48c0825a8a395c47ee1}{serie\+\_\+06\+\_\+tres\+\_\+cuartos\+\_\+v3}} (int n)
+\begin{DoxyCompactList}\small\item\em \+[O(n)]\+ Aproximacion de la fraccion 3/\+4. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{especial__opt_8c_a1761e96b8f079493ed78282f9aff3df8}{serie\+\_\+10\+\_\+ln1plusx\+\_\+v3}} (double x, int n)
+\begin{DoxyCompactList}\small\item\em \+[O(n)]\+ Serie de Mercator para ln(1+x). \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{especial__opt_8c_ad206e42fdea9b8e0e8f928c906a1e92a}{serie\+\_\+11\+\_\+variante\+\_\+log\+\_\+v3}} (double x, int n)
+\begin{DoxyCompactList}\small\item\em \+[O(n)]\+ Serie variante de logaritmo. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{especial__opt_8c_a5707bf9bb8d361996ae685e873ef5f88}{serie\+\_\+12\+\_\+ln\+\_\+x\+\_\+v1\+\_\+v3}} (double x, int n)
+\begin{DoxyCompactList}\small\item\em \+[O(n)]\+ Variante 1 para ln(x). \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{especial__opt_8c_a886c2fb2a4232cb84b249909aea4effe}{serie\+\_\+13\+\_\+ln\+\_\+x\+\_\+v2\+\_\+v3}} (double x, int n)
+\begin{DoxyCompactList}\small\item\em \+[O(n)]\+ Variante 2 para ln(x). \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{especial__opt_8c_a2d59f110fcb1e04c709a1ae7858c9836}{serie\+\_\+14\+\_\+binomio\+\_\+v3}} (double x, double alpha, int n)
+\begin{DoxyCompactList}\small\item\em \+[O(n)]\+ Serie del Binomio de Newton (1+x)\texorpdfstring{$^\wedge$}{\string^}alpha. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{especial__opt_8c_ab4308668fcf79f915a3589fa6d0168a6}{serie\+\_\+15\+\_\+a\+\_\+potencia\+\_\+x\+\_\+v3}} (double a, double x, int n)
+\begin{DoxyCompactList}\small\item\em \+[O(n)]\+ Serie para la potencia a\texorpdfstring{$^\wedge$}{\string^}x. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{especial__opt_8c_a24b2680da294a744c9325056e16698c9}{serie\+\_\+16\+\_\+bernoulli\+\_\+v3}} (int k)
+\begin{DoxyCompactList}\small\item\em \+[O(n)]\+ Generador de Numeros de Bernoulli (Optimizacion de Memoria). \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{especial__opt_8c_a6f54126487788d66444f8d929f6900bc}{serie\+\_\+17\+\_\+euler\+\_\+\+Ek\+\_\+v3}} (int k)
+\begin{DoxyCompactList}\small\item\em \+[O(n)]\+ Generador de Numeros de Euler E\+\_\+k. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{especial__opt_8c_a181b4df3b45f3fe50a6912a4f4b56353}{serie\+\_\+18\+\_\+euler\+\_\+\+E2k\+\_\+v3}} (int k)
+\begin{DoxyCompactList}\small\item\em \+[O(n)]\+ Generador de Numeros de Euler E\+\_\+\{2k\}. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{especial__opt_8c_a0e8125fde1687aafd4ff14554f578c08}{serie\+\_\+32\+\_\+serie\+\_\+combinada\+\_\+v3}} (double x, int n)
+\begin{DoxyCompactList}\small\item\em \+[O(n)]\+ Resolucion de Serie Combinada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{especial__opt_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{especial__opt_8c_a9b5f83cdd7ca02b956d2d324d2f8d3b7}\index{especial\_opt.c@{especial\_opt.c}!serie\_01\_ln2\_v3@{serie\_01\_ln2\_v3}}
+\index{serie\_01\_ln2\_v3@{serie\_01\_ln2\_v3}!especial\_opt.c@{especial\_opt.c}}
+\doxysubsubsection{\texorpdfstring{serie\_01\_ln2\_v3()}{serie\_01\_ln2\_v3()}}
+{\footnotesize\ttfamily \label{especial__opt_8c_a9b5f83cdd7ca02b956d2d324d2f8d3b7} 
+double serie\+\_\+01\+\_\+ln2\+\_\+v3 (\begin{DoxyParamCaption}\item[{int}]{n}{}\end{DoxyParamCaption})}
+
+
+
+\+[O(n)]\+ Aproximacion de la constante ln(2). 
+
+Evita recalcular denominadores desde cero usando el termino anterior. 
+\begin{DoxyParams}{Parameters}
+{\em n} & Numero de terminos maximos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Aproximacion optimizada de ln(2). 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{especial__opt_8c_source_l00016}{16}} of file \doxymbox{\hyperlink{especial__opt_8c_source}{especial\+\_\+opt.\+c}}.
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{especial__opt_8c_a9b5f83cdd7ca02b956d2d324d2f8d3b7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{especial__opt_8c_aa5d5a085945a5597ec962eb1e5cd91dd}\index{especial\_opt.c@{especial\_opt.c}!serie\_02\_pi4\_v3@{serie\_02\_pi4\_v3}}
+\index{serie\_02\_pi4\_v3@{serie\_02\_pi4\_v3}!especial\_opt.c@{especial\_opt.c}}
+\doxysubsubsection{\texorpdfstring{serie\_02\_pi4\_v3()}{serie\_02\_pi4\_v3()}}
+{\footnotesize\ttfamily \label{especial__opt_8c_aa5d5a085945a5597ec962eb1e5cd91dd} 
+double serie\+\_\+02\+\_\+pi4\+\_\+v3 (\begin{DoxyParamCaption}\item[{int}]{n}{}\end{DoxyParamCaption})}
+
+
+
+\+[O(n)]\+ Aproximacion de pi/\+4. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Numero de terminos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Aproximacion optimizada. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{especial__opt_8c_source_l00027}{27}} of file \doxymbox{\hyperlink{especial__opt_8c_source}{especial\+\_\+opt.\+c}}.
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{especial__opt_8c_aa5d5a085945a5597ec962eb1e5cd91dd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{especial__opt_8c_a114c02d9d9417f406ff8d1869e6d3091}\index{especial\_opt.c@{especial\_opt.c}!serie\_03\_pi2\_6\_v3@{serie\_03\_pi2\_6\_v3}}
+\index{serie\_03\_pi2\_6\_v3@{serie\_03\_pi2\_6\_v3}!especial\_opt.c@{especial\_opt.c}}
+\doxysubsubsection{\texorpdfstring{serie\_03\_pi2\_6\_v3()}{serie\_03\_pi2\_6\_v3()}}
+{\footnotesize\ttfamily \label{especial__opt_8c_a114c02d9d9417f406ff8d1869e6d3091} 
+double serie\+\_\+03\+\_\+pi2\+\_\+6\+\_\+v3 (\begin{DoxyParamCaption}\item[{int}]{n}{}\end{DoxyParamCaption})}
+
+
+
+\+[O(n)]\+ Aproximacion de pi\texorpdfstring{$^\wedge$}{\string^}2/\+6. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Numero de terminos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Aproximacion optimizada. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{especial__opt_8c_source_l00039}{39}} of file \doxymbox{\hyperlink{especial__opt_8c_source}{especial\+\_\+opt.\+c}}.
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{especial__opt_8c_a114c02d9d9417f406ff8d1869e6d3091_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{especial__opt_8c_aa0a7490db913fe7600fe33c3a04bb153}\index{especial\_opt.c@{especial\_opt.c}!serie\_04\_pi2\_8\_v3@{serie\_04\_pi2\_8\_v3}}
+\index{serie\_04\_pi2\_8\_v3@{serie\_04\_pi2\_8\_v3}!especial\_opt.c@{especial\_opt.c}}
+\doxysubsubsection{\texorpdfstring{serie\_04\_pi2\_8\_v3()}{serie\_04\_pi2\_8\_v3()}}
+{\footnotesize\ttfamily \label{especial__opt_8c_aa0a7490db913fe7600fe33c3a04bb153} 
+double serie\+\_\+04\+\_\+pi2\+\_\+8\+\_\+v3 (\begin{DoxyParamCaption}\item[{int}]{n}{}\end{DoxyParamCaption})}
+
+
+
+\+[O(n)]\+ Aproximacion de pi\texorpdfstring{$^\wedge$}{\string^}2/\+8. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Numero de terminos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Aproximacion optimizada. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{especial__opt_8c_source_l00046}{46}} of file \doxymbox{\hyperlink{especial__opt_8c_source}{especial\+\_\+opt.\+c}}.
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{especial__opt_8c_aa0a7490db913fe7600fe33c3a04bb153_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{especial__opt_8c_aafd0ba6e06953b2d1b99ddb61d7cd953}\index{especial\_opt.c@{especial\_opt.c}!serie\_05\_un\_medio\_v3@{serie\_05\_un\_medio\_v3}}
+\index{serie\_05\_un\_medio\_v3@{serie\_05\_un\_medio\_v3}!especial\_opt.c@{especial\_opt.c}}
+\doxysubsubsection{\texorpdfstring{serie\_05\_un\_medio\_v3()}{serie\_05\_un\_medio\_v3()}}
+{\footnotesize\ttfamily \label{especial__opt_8c_aafd0ba6e06953b2d1b99ddb61d7cd953} 
+double serie\+\_\+05\+\_\+un\+\_\+medio\+\_\+v3 (\begin{DoxyParamCaption}\item[{int}]{n}{}\end{DoxyParamCaption})}
+
+
+
+\+[O(n)]\+ Aproximacion de la fraccion 1/\+2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Numero de terminos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Aproximacion optimizada. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{especial__opt_8c_source_l00056}{56}} of file \doxymbox{\hyperlink{especial__opt_8c_source}{especial\+\_\+opt.\+c}}.
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{especial__opt_8c_aafd0ba6e06953b2d1b99ddb61d7cd953_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{especial__opt_8c_a7d745acb2625d48c0825a8a395c47ee1}\index{especial\_opt.c@{especial\_opt.c}!serie\_06\_tres\_cuartos\_v3@{serie\_06\_tres\_cuartos\_v3}}
+\index{serie\_06\_tres\_cuartos\_v3@{serie\_06\_tres\_cuartos\_v3}!especial\_opt.c@{especial\_opt.c}}
+\doxysubsubsection{\texorpdfstring{serie\_06\_tres\_cuartos\_v3()}{serie\_06\_tres\_cuartos\_v3()}}
+{\footnotesize\ttfamily \label{especial__opt_8c_a7d745acb2625d48c0825a8a395c47ee1} 
+double serie\+\_\+06\+\_\+tres\+\_\+cuartos\+\_\+v3 (\begin{DoxyParamCaption}\item[{int}]{n}{}\end{DoxyParamCaption})}
+
+
+
+\+[O(n)]\+ Aproximacion de la fraccion 3/\+4. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Numero de terminos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Aproximacion optimizada. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{especial__opt_8c_source_l00063}{63}} of file \doxymbox{\hyperlink{especial__opt_8c_source}{especial\+\_\+opt.\+c}}.
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{especial__opt_8c_a7d745acb2625d48c0825a8a395c47ee1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{especial__opt_8c_a1761e96b8f079493ed78282f9aff3df8}\index{especial\_opt.c@{especial\_opt.c}!serie\_10\_ln1plusx\_v3@{serie\_10\_ln1plusx\_v3}}
+\index{serie\_10\_ln1plusx\_v3@{serie\_10\_ln1plusx\_v3}!especial\_opt.c@{especial\_opt.c}}
+\doxysubsubsection{\texorpdfstring{serie\_10\_ln1plusx\_v3()}{serie\_10\_ln1plusx\_v3()}}
+{\footnotesize\ttfamily \label{especial__opt_8c_a1761e96b8f079493ed78282f9aff3df8} 
+double serie\+\_\+10\+\_\+ln1plusx\+\_\+v3 (\begin{DoxyParamCaption}\item[{double}]{x}{, }\item[{int}]{n}{}\end{DoxyParamCaption})}
+
+
+
+\+[O(n)]\+ Serie de Mercator para ln(1+x). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Valor real (-\/1 \texorpdfstring{$<$}{<} x \texorpdfstring{$<$}{<}= 1). \\
+\hline
+{\em n} & Numero de terminos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Aproximacion optimizada. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{especial__opt_8c_source_l00074}{74}} of file \doxymbox{\hyperlink{especial__opt_8c_source}{especial\+\_\+opt.\+c}}.
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{especial__opt_8c_a1761e96b8f079493ed78282f9aff3df8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{especial__opt_8c_ad206e42fdea9b8e0e8f928c906a1e92a}\index{especial\_opt.c@{especial\_opt.c}!serie\_11\_variante\_log\_v3@{serie\_11\_variante\_log\_v3}}
+\index{serie\_11\_variante\_log\_v3@{serie\_11\_variante\_log\_v3}!especial\_opt.c@{especial\_opt.c}}
+\doxysubsubsection{\texorpdfstring{serie\_11\_variante\_log\_v3()}{serie\_11\_variante\_log\_v3()}}
+{\footnotesize\ttfamily \label{especial__opt_8c_ad206e42fdea9b8e0e8f928c906a1e92a} 
+double serie\+\_\+11\+\_\+variante\+\_\+log\+\_\+v3 (\begin{DoxyParamCaption}\item[{double}]{x}{, }\item[{int}]{n}{}\end{DoxyParamCaption})}
+
+
+
+\+[O(n)]\+ Serie variante de logaritmo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Valor real (-\/1 \texorpdfstring{$<$}{<} x \texorpdfstring{$<$}{<} 1). \\
+\hline
+{\em n} & Numero de terminos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Aproximacion optimizada. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{especial__opt_8c_source_l00086}{86}} of file \doxymbox{\hyperlink{especial__opt_8c_source}{especial\+\_\+opt.\+c}}.
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{especial__opt_8c_ad206e42fdea9b8e0e8f928c906a1e92a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{especial__opt_8c_a5707bf9bb8d361996ae685e873ef5f88}\index{especial\_opt.c@{especial\_opt.c}!serie\_12\_ln\_x\_v1\_v3@{serie\_12\_ln\_x\_v1\_v3}}
+\index{serie\_12\_ln\_x\_v1\_v3@{serie\_12\_ln\_x\_v1\_v3}!especial\_opt.c@{especial\_opt.c}}
+\doxysubsubsection{\texorpdfstring{serie\_12\_ln\_x\_v1\_v3()}{serie\_12\_ln\_x\_v1\_v3()}}
+{\footnotesize\ttfamily \label{especial__opt_8c_a5707bf9bb8d361996ae685e873ef5f88} 
+double serie\+\_\+12\+\_\+ln\+\_\+x\+\_\+v1\+\_\+v3 (\begin{DoxyParamCaption}\item[{double}]{x}{, }\item[{int}]{n}{}\end{DoxyParamCaption})}
+
+
+
+\+[O(n)]\+ Variante 1 para ln(x). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Valor real (x \texorpdfstring{$>$}{>} 0). \\
+\hline
+{\em n} & Numero de terminos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Aproximacion optimizada. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{especial__opt_8c_source_l00103}{103}} of file \doxymbox{\hyperlink{especial__opt_8c_source}{especial\+\_\+opt.\+c}}.
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{especial__opt_8c_a5707bf9bb8d361996ae685e873ef5f88_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{especial__opt_8c_a886c2fb2a4232cb84b249909aea4effe}\index{especial\_opt.c@{especial\_opt.c}!serie\_13\_ln\_x\_v2\_v3@{serie\_13\_ln\_x\_v2\_v3}}
+\index{serie\_13\_ln\_x\_v2\_v3@{serie\_13\_ln\_x\_v2\_v3}!especial\_opt.c@{especial\_opt.c}}
+\doxysubsubsection{\texorpdfstring{serie\_13\_ln\_x\_v2\_v3()}{serie\_13\_ln\_x\_v2\_v3()}}
+{\footnotesize\ttfamily \label{especial__opt_8c_a886c2fb2a4232cb84b249909aea4effe} 
+double serie\+\_\+13\+\_\+ln\+\_\+x\+\_\+v2\+\_\+v3 (\begin{DoxyParamCaption}\item[{double}]{x}{, }\item[{int}]{n}{}\end{DoxyParamCaption})}
+
+
+
+\+[O(n)]\+ Variante 2 para ln(x). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Valor real (x \texorpdfstring{$>$}{>}= 1/\+2). \\
+\hline
+{\em n} & Numero de terminos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Aproximacion optimizada. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{especial__opt_8c_source_l00116}{116}} of file \doxymbox{\hyperlink{especial__opt_8c_source}{especial\+\_\+opt.\+c}}.
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{especial__opt_8c_a886c2fb2a4232cb84b249909aea4effe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{especial__opt_8c_a2d59f110fcb1e04c709a1ae7858c9836}\index{especial\_opt.c@{especial\_opt.c}!serie\_14\_binomio\_v3@{serie\_14\_binomio\_v3}}
+\index{serie\_14\_binomio\_v3@{serie\_14\_binomio\_v3}!especial\_opt.c@{especial\_opt.c}}
+\doxysubsubsection{\texorpdfstring{serie\_14\_binomio\_v3()}{serie\_14\_binomio\_v3()}}
+{\footnotesize\ttfamily \label{especial__opt_8c_a2d59f110fcb1e04c709a1ae7858c9836} 
+double serie\+\_\+14\+\_\+binomio\+\_\+v3 (\begin{DoxyParamCaption}\item[{double}]{x}{, }\item[{double}]{alpha}{, }\item[{int}]{n}{}\end{DoxyParamCaption})}
+
+
+
+\+[O(n)]\+ Serie del Binomio de Newton (1+x)\texorpdfstring{$^\wedge$}{\string^}alpha. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Valor base (\texorpdfstring{$\vert$}{|}x\texorpdfstring{$\vert$}{|} \texorpdfstring{$<$}{<} 1). \\
+\hline
+{\em alpha} & Exponente fraccionario o negativo. \\
+\hline
+{\em n} & Numero de terminos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Aproximacion optimizada. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{especial__opt_8c_source_l00128}{128}} of file \doxymbox{\hyperlink{especial__opt_8c_source}{especial\+\_\+opt.\+c}}.
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{especial__opt_8c_a2d59f110fcb1e04c709a1ae7858c9836_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{especial__opt_8c_ab4308668fcf79f915a3589fa6d0168a6}\index{especial\_opt.c@{especial\_opt.c}!serie\_15\_a\_potencia\_x\_v3@{serie\_15\_a\_potencia\_x\_v3}}
+\index{serie\_15\_a\_potencia\_x\_v3@{serie\_15\_a\_potencia\_x\_v3}!especial\_opt.c@{especial\_opt.c}}
+\doxysubsubsection{\texorpdfstring{serie\_15\_a\_potencia\_x\_v3()}{serie\_15\_a\_potencia\_x\_v3()}}
+{\footnotesize\ttfamily \label{especial__opt_8c_ab4308668fcf79f915a3589fa6d0168a6} 
+double serie\+\_\+15\+\_\+a\+\_\+potencia\+\_\+x\+\_\+v3 (\begin{DoxyParamCaption}\item[{double}]{a}{, }\item[{double}]{x}{, }\item[{int}]{n}{}\end{DoxyParamCaption})}
+
+
+
+\+[O(n)]\+ Serie para la potencia a\texorpdfstring{$^\wedge$}{\string^}x. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Base real positiva (a \texorpdfstring{$>$}{>} 0). \\
+\hline
+{\em x} & Exponente real. \\
+\hline
+{\em n} & Numero de terminos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Aproximacion optimizada. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{especial__opt_8c_source_l00140}{140}} of file \doxymbox{\hyperlink{especial__opt_8c_source}{especial\+\_\+opt.\+c}}.
+
+Here is the call graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{especial__opt_8c_ab4308668fcf79f915a3589fa6d0168a6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{especial__opt_8c_ab4308668fcf79f915a3589fa6d0168a6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{especial__opt_8c_a24b2680da294a744c9325056e16698c9}\index{especial\_opt.c@{especial\_opt.c}!serie\_16\_bernoulli\_v3@{serie\_16\_bernoulli\_v3}}
+\index{serie\_16\_bernoulli\_v3@{serie\_16\_bernoulli\_v3}!especial\_opt.c@{especial\_opt.c}}
+\doxysubsubsection{\texorpdfstring{serie\_16\_bernoulli\_v3()}{serie\_16\_bernoulli\_v3()}}
+{\footnotesize\ttfamily \label{especial__opt_8c_a24b2680da294a744c9325056e16698c9} 
+double serie\+\_\+16\+\_\+bernoulli\+\_\+v3 (\begin{DoxyParamCaption}\item[{int}]{k}{}\end{DoxyParamCaption})}
+
+
+
+\+[O(n)]\+ Generador de Numeros de Bernoulli (Optimizacion de Memoria). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & Limite de la iteracion. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Numero de Bernoulli B\+\_\+k. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{especial__opt_8c_source_l00147}{147}} of file \doxymbox{\hyperlink{especial__opt_8c_source}{especial\+\_\+opt.\+c}}.
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{especial__opt_8c_a24b2680da294a744c9325056e16698c9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{especial__opt_8c_a6f54126487788d66444f8d929f6900bc}\index{especial\_opt.c@{especial\_opt.c}!serie\_17\_euler\_Ek\_v3@{serie\_17\_euler\_Ek\_v3}}
+\index{serie\_17\_euler\_Ek\_v3@{serie\_17\_euler\_Ek\_v3}!especial\_opt.c@{especial\_opt.c}}
+\doxysubsubsection{\texorpdfstring{serie\_17\_euler\_Ek\_v3()}{serie\_17\_euler\_Ek\_v3()}}
+{\footnotesize\ttfamily \label{especial__opt_8c_a6f54126487788d66444f8d929f6900bc} 
+double serie\+\_\+17\+\_\+euler\+\_\+\+Ek\+\_\+v3 (\begin{DoxyParamCaption}\item[{int}]{k}{}\end{DoxyParamCaption})}
+
+
+
+\+[O(n)]\+ Generador de Numeros de Euler E\+\_\+k. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & Limite de la iteracion. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Numero de Euler E\+\_\+k. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{especial__opt_8c_source_l00170}{170}} of file \doxymbox{\hyperlink{especial__opt_8c_source}{especial\+\_\+opt.\+c}}.
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{especial__opt_8c_a6f54126487788d66444f8d929f6900bc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{especial__opt_8c_a181b4df3b45f3fe50a6912a4f4b56353}\index{especial\_opt.c@{especial\_opt.c}!serie\_18\_euler\_E2k\_v3@{serie\_18\_euler\_E2k\_v3}}
+\index{serie\_18\_euler\_E2k\_v3@{serie\_18\_euler\_E2k\_v3}!especial\_opt.c@{especial\_opt.c}}
+\doxysubsubsection{\texorpdfstring{serie\_18\_euler\_E2k\_v3()}{serie\_18\_euler\_E2k\_v3()}}
+{\footnotesize\ttfamily \label{especial__opt_8c_a181b4df3b45f3fe50a6912a4f4b56353} 
+double serie\+\_\+18\+\_\+euler\+\_\+\+E2k\+\_\+v3 (\begin{DoxyParamCaption}\item[{int}]{k}{}\end{DoxyParamCaption})}
+
+
+
+\+[O(n)]\+ Generador de Numeros de Euler E\+\_\+\{2k\}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & Limite de la iteracion. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Numero de Euler alternante. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{especial__opt_8c_source_l00196}{196}} of file \doxymbox{\hyperlink{especial__opt_8c_source}{especial\+\_\+opt.\+c}}.
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{especial__opt_8c_a181b4df3b45f3fe50a6912a4f4b56353_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{especial__opt_8c_a0e8125fde1687aafd4ff14554f578c08}\index{especial\_opt.c@{especial\_opt.c}!serie\_32\_serie\_combinada\_v3@{serie\_32\_serie\_combinada\_v3}}
+\index{serie\_32\_serie\_combinada\_v3@{serie\_32\_serie\_combinada\_v3}!especial\_opt.c@{especial\_opt.c}}
+\doxysubsubsection{\texorpdfstring{serie\_32\_serie\_combinada\_v3()}{serie\_32\_serie\_combinada\_v3()}}
+{\footnotesize\ttfamily \label{especial__opt_8c_a0e8125fde1687aafd4ff14554f578c08} 
+double serie\+\_\+32\+\_\+serie\+\_\+combinada\+\_\+v3 (\begin{DoxyParamCaption}\item[{double}]{x}{, }\item[{int}]{n}{}\end{DoxyParamCaption})}
+
+
+
+\+[O(n)]\+ Resolucion de Serie Combinada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Valor real. \\
+\hline
+{\em n} & Numero de terminos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Aproximacion optimizada. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{especial__opt_8c_source_l00230}{230}} of file \doxymbox{\hyperlink{especial__opt_8c_source}{especial\+\_\+opt.\+c}}.
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{especial__opt_8c_a0e8125fde1687aafd4ff14554f578c08_icgraph}
+\end{center}
+\end{figure}

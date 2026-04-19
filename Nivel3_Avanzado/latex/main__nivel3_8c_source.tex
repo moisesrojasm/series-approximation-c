@@ -1,0 +1,153 @@
+\doxysection{main\+\_\+nivel3.\+c}
+\hypertarget{main__nivel3_8c_source}{}\label{main__nivel3_8c_source}\doxymbox{\hyperlink{main__nivel3_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00002}00002\ \textcolor{comment}{//\ Archivo:\ main\_nivel3.c}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00003}00003\ \textcolor{comment}{//\ Centro\ de\ Mando\ Nivel\ 3\ (Motor\ de\ Tablas\ +\ Benchmark\ de\ Tiempo\ O(n))}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00004}00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <time.h>}\ \textcolor{comment}{//\ Libreria\ para\ medir\ los\ ciclos\ de\ reloj\ de\ la\ CPU}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{series__v3_8h}{include/series\_v3.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00011}00011\ \textcolor{comment}{//\ =========================================================================}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00012}00012\ \textcolor{comment}{//\ ENRUTADOR\ MAESTRO\ NIVEL\ 3}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00013}00013\ \textcolor{comment}{//\ =========================================================================}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00014}\doxymbox{\hyperlink{main__nivel3_8c_a46232b3626acaea9178d5b299ed4cceb}{00014}}\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{main__nivel3_8c_a46232b3626acaea9178d5b299ed4cceb}{evaluar\_serie\_v3}}(\textcolor{keywordtype}{int}\ opcion,\ \textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ alpha,\ \textcolor{keywordtype}{double}\ a,\ \textcolor{keywordtype}{int}\ n)\ \{}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{switch}(opcion)\ \{}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:\ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_a9b5f83cdd7ca02b956d2d324d2f8d3b7}{serie\_01\_ln2\_v3}}(n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:\ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_aa5d5a085945a5597ec962eb1e5cd91dd}{serie\_02\_pi4\_v3}}(n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:\ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_a114c02d9d9417f406ff8d1869e6d3091}{serie\_03\_pi2\_6\_v3}}(n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4:\ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_aa0a7490db913fe7600fe33c3a04bb153}{serie\_04\_pi2\_8\_v3}}(n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 5:\ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_aafd0ba6e06953b2d1b99ddb61d7cd953}{serie\_05\_un\_medio\_v3}}(n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 6:\ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_a7d745acb2625d48c0825a8a395c47ee1}{serie\_06\_tres\_cuartos\_v3}}(n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 7:\ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_a0968a186957946b0486892f58bcce4bd}{serie\_07\_exp\_v3}}(x,\ n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 8:\ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_aec32e0f3852a1af2a3a0da31436056e8}{serie\_08\_x\_exp\_v3}}(x,\ n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 9:\ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_a3ec34c38eb9ecdf85ca2d77ff0004832}{serie\_09\_x\_x2\_exp\_v3}}(x,\ n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 10:\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_a1761e96b8f079493ed78282f9aff3df8}{serie\_10\_ln1plusx\_v3}}(x,\ n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 11:\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_ad206e42fdea9b8e0e8f928c906a1e92a}{serie\_11\_variante\_log\_v3}}(x,\ n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 12:\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_a5707bf9bb8d361996ae685e873ef5f88}{serie\_12\_ln\_x\_v1\_v3}}(x,\ n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 13:\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_a886c2fb2a4232cb84b249909aea4effe}{serie\_13\_ln\_x\_v2\_v3}}(x,\ n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 14:\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_a2d59f110fcb1e04c709a1ae7858c9836}{serie\_14\_binomio\_v3}}(x,\ alpha,\ n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 15:\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_ab4308668fcf79f915a3589fa6d0168a6}{serie\_15\_a\_potencia\_x\_v3}}(a,\ x,\ n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 16:\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_a24b2680da294a744c9325056e16698c9}{serie\_16\_bernoulli\_v3}}(n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 17:\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_a6f54126487788d66444f8d929f6900bc}{serie\_17\_euler\_Ek\_v3}}(n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 18:\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_a181b4df3b45f3fe50a6912a4f4b56353}{serie\_18\_euler\_E2k\_v3}}(n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 19:\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_a81c6f1a38dff9dd6bbc869283e2f036d}{serie\_19\_seno\_v3}}(x,\ n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 20:\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_ae21ac5645a1b181e15cef5f476354b00}{serie\_20\_coseno\_v3}}(x,\ n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 21:\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_af036247159bc62068296874112e7f75f}{serie\_21\_tangente\_v3}}(x,\ n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 22:\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_a8c1593fb37c4c7c4938cc54f89c4725d}{serie\_22\_secante\_v3}}(x,\ n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 23:\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_a3200d96edc4a684b97ca0979a12cdbf8}{serie\_23\_cosecante\_v3}}(x,\ n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 24:\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_a6f29d911b89490691ef2a8b7534b1178}{serie\_24\_arcsin\_v3}}(x,\ n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 25:\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_a9d5c0d5dc362146e6ec68fee781ea7cd}{serie\_25\_arccos\_v3}}(x,\ n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 26:\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_a89b2342465f857eecf064c21766b45cb}{serie\_26\_arctan\_v3}}(x,\ n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 27:\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_a50095514c51916d28e334c97d1b5de7c}{serie\_27\_senh\_v3}}(x,\ n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 28:\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_a67cc68ef3e1520be58641b0e514aed0b}{serie\_28\_cosh\_v3}}(x,\ n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 29:\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_ae220bf1af036c2a5fca83b2cef87f06d}{serie\_29\_tanh\_v3}}(x,\ n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 30:\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_a3f55ad17d3bd25b0f1e6a34e127ac86b}{serie\_30\_csenh\_v3}}(x,\ n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 31:\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_ac44d161918e890693f3d61db4b0bceb4}{serie\_31\_arctanh\_v3}}(x,\ n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 32:\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_a0e8125fde1687aafd4ff14554f578c08}{serie\_32\_serie\_combinada\_v3}}(x,\ n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 33:\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{series__v3_8h_a9757a39b49190e52ba60305012d7d6e7}{serie\_33\_exp\_seno\_v3}}(x,\ n);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00051}00051\ \}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00053}00053\ \textcolor{comment}{//\ =========================================================================}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00054}00054\ \textcolor{comment}{//\ FUNCION\ PRINCIPAL}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00055}00055\ \textcolor{comment}{//\ =========================================================================}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00056}\doxymbox{\hyperlink{main__nivel3_8c_a0ddf1224851353fc92bfbff6f499fa97}{00056}}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{main__nivel3_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *argv[])\ \{}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00057}00057\ \ \ \ \ \textcolor{keywordtype}{int}\ opcion;}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00058}00058\ \ \ \ \ \textcolor{keywordtype}{double}\ alpha\ =\ 0.0,\ a\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00059}00059\ \ \ \ \ \textcolor{keywordtype}{double}\ x\_vals[3]\ =\ \{0.0,\ 0.0,\ 0.0\};}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{int}\ num\_x\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00062}00062\ \ \ \ \ \textcolor{comment}{//\ Saltos\ en\ potencias\ de\ 2\ exigidos\ por\ la\ rubrica}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{int}\ n\_octavas[]\ =\ \{2,\ 4,\ 8,\ 16,\ 32,\ 64,\ 128,\ 256\};}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00066}00066\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n======================================================\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00067}00067\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \ \ MOTOR\ BENCHMARK\ (NIVEL\ 3\ -\/\ OPTIMIZACION\ O(n))\ \(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00068}00068\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}======================================================\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00069}00069\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ [01-\/06]\ Constantes\ \ \ \ \ \ [19-\/26]\ Trigonometricas\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00070}00070\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ [07-\/13]\ Exponenciales\ \ \ [27-\/33]\ Hiperbolicas\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00071}00071\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ [14-\/18]\ Especiales\ \ \ \ \ \ [0]\ SALIR\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00072}00072\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00073}00073\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Seleccione\ una\ funcion\ (1-\/33):\ "{}});}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (scanf(\textcolor{stringliteral}{"{}\%d"{}},\ \&opcion)\ !=\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (getchar()\ !=\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Error:\ Entrada\ invalida.\ Ingrese\ un\ numero.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (opcion\ ==\ 0)\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (opcion\ <\ 1\ ||\ opcion\ >\ 33)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((opcion\ >=\ 7\ \&\&\ opcion\ <=\ 15)\ ||\ (opcion\ >=\ 19\ \&\&\ opcion\ <=\ 33))\ \{}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Ingrese\ 3\ valores\ de\ 'x'\ separados\ por\ espacio\ (ej.\ 0.5\ 1.0\ 1.5):\ "{}});}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (scanf(\textcolor{stringliteral}{"{}\%lf\ \%lf\ \%lf"{}},\ \&x\_vals[0],\ \&x\_vals[1],\ \&x\_vals[2])\ !=\ 3)\ \{}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (getchar()\ !=\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\_vals[0]\ =\ 0.5;\ x\_vals[1]\ =\ 1.0;\ x\_vals[2]\ =\ 1.5;}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ num\_x\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00091}00091\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ num\_x\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00093}00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (opcion\ ==\ 14)\ \{}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Ingrese\ el\ valor\ de\ alpha:\ "{}});}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ scanf(\textcolor{stringliteral}{"{}\%lf"{}},\ \&alpha);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00098}00098\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (opcion\ ==\ 15)\ \{}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Ingrese\ el\ valor\ de\ la\ base\ a:\ "{}});}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ scanf(\textcolor{stringliteral}{"{}\%lf"{}},\ \&a);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00101}00101\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00103}00103\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nGenerando\ Benchmark\ de\ Rendimiento...\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ v\ =\ 0;\ v\ <\ num\_x;\ v++)\ \{}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (num\_x\ ==\ 3)\ \{}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n===================================================================================\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ Bloque:\ x\ =\ \%f\(\backslash\)n"{}},\ x\_vals[v]);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}===================================================================================\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Cabecera\ ampliada\ con\ métrica\ de\ Tiempo}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%-\/6s\ |\ \%-\/16s\ |\ \%-\/16s\ |\ \%-\/16s\ |\ \%-\/15s\(\backslash\)n"{}},\ \textcolor{stringliteral}{"{}n"{}},\ \textcolor{stringliteral}{"{}S\_n(x)"{}},\ \textcolor{stringliteral}{"{}Delta\_n(x)"{}},\ \textcolor{stringliteral}{"{}e\_a(x)"{}},\ \textcolor{stringliteral}{"{}Tiempo\ (us)"{}});}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 8;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n\_actual\ =\ n\_octavas[i];}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n\_mitad\ =\ n\_actual\ /\ 2;}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 1.\ Benchmark\ de\ Tiempo\ (Corremos\ 1000\ veces\ para\ tener\ una\ lectura\ medible)}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clock\_t\ inicio\ =\ clock();}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ s\_n\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ iter\ =\ 0;\ iter\ <\ 1000;\ iter++)\ \{}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\_n\ =\ \doxymbox{\hyperlink{main__nivel3_8c_a46232b3626acaea9178d5b299ed4cceb}{evaluar\_serie\_v3}}(opcion,\ x\_vals[v],\ alpha,\ a,\ n\_actual);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clock\_t\ fin\ =\ clock();}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Tiempo\ en\ microsegundos\ (us)\ por\ evaluacion\ promedio}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tiempo\_us\ =\ ((double)(fin\ -\/\ inicio)\ /\ CLOCKS\_PER\_SEC)\ *\ 1000000.0\ /\ 1000.0;}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 2.\ Calculamos\ la\ mitad\ para\ el\ delta}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ s\_n\_mitad\ =\ \doxymbox{\hyperlink{main__nivel3_8c_a46232b3626acaea9178d5b299ed4cceb}{evaluar\_serie\_v3}}(opcion,\ x\_vals[v],\ alpha,\ a,\ n\_mitad);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 3.\ Matematicas\ de\ Convergencia}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ delta\ =\ fabs(s\_n\ -\/\ s\_n\_mitad);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ max\_val\ =\ fabs(s\_n)\ >\ 1e-\/15\ ?\ fabs(s\_n)\ :\ 1e-\/15;}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ e\_a\ =\ delta\ /\ max\_val;}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 4.\ Salida\ en\ formato\ tabla}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%-\/6d\ |\ \%-\/16.6f\ |\ \%-\/16.6e\ |\ \%-\/16.6e\ |\ \%-\/15.4f\(\backslash\)n"{}},\ n\_actual,\ s\_n,\ delta,\ e\_a,\ tiempo\_us);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00142}00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00143}00143\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00145}00145\ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (opcion\ !=\ 0);}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00147}00147\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{main__nivel3_8c_source_l00148}00148\ \}}
+
+\end{DoxyCode}
