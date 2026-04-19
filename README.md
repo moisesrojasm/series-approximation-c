@@ -12,8 +12,7 @@ series-approximation-c/
 ├── LICENSE                  
 ├── README.md                
 │
-├── Nivel1_Inicial/          # NIVEL 1: SOLUCIÓN DIRECTA.
-│   ├── .gitkeep             
+├── Nivel1_Inicial/          # NIVEL 1: SOLUCIÓN DIRECTA.            
 │   └── main_nivel1.c        # Un solo archivo con las 33 series implementadas de forma simple, O(n²).
 │                            
 ├── Nivel2_Intermedio/       # NIVEL 2: ESTABILIZACIÓN Y VALIDACIÓN.
@@ -22,8 +21,7 @@ series-approximation-c/
 │   ├── src/                 
 │   │   ├── constantes.c     # Series 1-6 y 27-33.
 │   │   ├── exponenciales.c  # Series 7-13.
-│   │   └── trigonometricas.c # Series 19-26.
-│   ├── .gitkeep             
+│   │   └── trigonometricas.c # Series 19-26.            
 │   └── main_nivel2.c        # Validación de dominio. Genera tablas con n={2,4,8,16,32,64,128,256}.
 │
 └── Nivel3_Avanzado/         # NIVEL 3: OPTIMIZACIÓN Y DOCUMENTACIÓN.
@@ -33,8 +31,7 @@ series-approximation-c/
     ├── latex/               # Documentación en formato PDF/LaTeX generada por Doxygen.
     ├── src/                 
     │   ├── especial_opt.c   # Implementación optimizada de funciones especiales.
-    │   └── trig_exp_opt.c   # Funciones trigonométricas y exponenciales por recurrencia O(n).
-    ├── .gitkeep             
+    │   └── trig_exp_opt.c   # Funciones trigonométricas y exponenciales por recurrencia O(n).            
     └── main_nivel3.c        # Cálculo de métricas: Delta_n (diferencia) y Error de Aproximación.
                              
 ```
