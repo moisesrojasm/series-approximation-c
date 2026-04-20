@@ -1,16 +1,19 @@
 # Estructura del Proyecto: Cálculo de Series en C
 
+![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
+![CMake](https://img.shields.io/badge/CMake-%23008FBA.svg?style=for-the-badge&logo=cmake&logoColor=white)
+![Doxygen](https://img.shields.io/badge/Doxygen-%234A2E8B.svg?style=for-the-badge&logo=doxygen&logoColor=white)
+
 Implementación y análisis numérico de series matemáticas en C usando estructuras de control (for, while, do-while). Incluye estudio de convergencia, métricas de error de aproximación y comparación de rendimiento entre estrategias iterativas.
 
 ```plaintext
 series-approximation-c/
 │
-├── .idea/                   # Configuración del entorno de desarrollo (CLion).
-├── cmake-build-debug/       # Archivos y binarios de compilación generados por CMake.
 ├── .gitignore               
 ├── CMakeLists.txt           # Configuración principal de compilación para el proyecto.
 ├── LICENSE                  
-├── README.md                
+├── README.md       
+├── Reporte_Practica_1.pdf             
 │
 ├── Nivel1_Inicial/          # NIVEL 1: SOLUCIÓN DIRECTA.            
 │   └── main_nivel1.c        # Un solo archivo con las 33 series implementadas de forma simple, O(n²).
@@ -83,3 +86,43 @@ Las funciones a implementar son:
 33. **Exponencial del seno**: $e^{\sin x} = 1 + x + \frac{x^{2}}{2} - \frac{x^{4}}{8} - \dots$ 
 
 ---
+
+## Instrucciones de Compilación y Ejecución
+
+Este proyecto utiliza **CMake** como sistema de construcción para garantizar la portabilidad del código entre distintos sistemas operativos (Windows, macOS, Linux).
+
+### Requisitos Previos
+* Un compilador de C estándar (GCC, MinGW, Clang o MSVC).
+* **CMake** (versión 3.10 o superior).
+
+### Método 1: Compilación Automatizada (Recomendado)
+Abre una terminal en la raíz del proyecto y ejecuta los siguientes comandos para compilar el Nivel 3:
+
+```bash
+# 1. Crear un directorio aislado para los binarios
+mkdir build
+cd build
+
+# 2. Generar los archivos de configuración
+cmake ..
+
+# 3. Compilar el código fuente
+cmake --build .
+
+# 4. Ejecutar el programa principal
+./Nivel3_Avanzado/main_nivel3    # En sistemas Unix/Mac
+.\Nivel3_Avanzado\Debug\main_nivel3.exe  # En sistemas Windows
+```
+
+
+### Método 2: Compilación Manual
+Si no se dispone de CMake, el proyecto puede compilarse de forma tradicional usando gcc.
+
+Desde la raíz del repositorio, ejecuta:
+```bash
+# Compilar enlazando las librerías matemáticas (-lm)
+gcc Nivel3_Avanzado/src/*.c Nivel3_Avanzado/main_nivel3.c -I Nivel3_Avanzado/include -o main_nivel3 -lm
+
+# Ejecutar el binario
+./main_nivel3
+```
