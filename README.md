@@ -9,11 +9,11 @@ Implementación y análisis numérico de series matemáticas en C usando estruct
 ```plaintext
 series-approximation-c/
 │
-├── .gitignore               
+├── .gitignore
+├── .gitattributes           # Reglas de Linguist para estadísticas de GitHub.               
 ├── CMakeLists.txt           # Configuración principal de compilación para el proyecto.
 ├── LICENSE                  
-├── README.md       
-├── Reporte_Practica_1.pdf             
+├── README.md                  
 │
 ├── Nivel1_Inicial/          # NIVEL 1: SOLUCIÓN DIRECTA.            
 │   └── main_nivel1.c        # Un solo archivo con las 33 series implementadas de forma simple, O(n²).
